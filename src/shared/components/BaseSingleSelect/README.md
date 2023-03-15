@@ -1,0 +1,132 @@
+//////// BaseSingleSelect Usage //////////
+
+Accepts: props, that is:
+
+1. id - required, it should be unique
+2. name - required, it should be unique
+3. fieldNames - required, you should pass key to work select based on it and label to show
+4. label - optional, label of select input
+5. size - optionaj, values = "lg" | "md" | "sm";
+   default: lg
+6. error - optional, type = boolean, default:false,
+7. message - optional, message of error, it shows only error=true
+8. disabled - optional, type = boolean, default:false,
+9. success - optional, type = boolean, default:false,
+10. options - optional, type = Array<Object>, default:[], you pass list of items,
+11. search - optional, type=boolean, default:false, to search new items
+12. searchPlaceHolder - optional, type = string, in search mode you can use it
+13. mode - optional, type = 'filter'|'', default:'', to switch input mode
+14. loading - optional, type = boolean, default:false
+    You can get value (key type value) by v-model as usual and it is required, you can see examples below:
+
+Events: search, select
+
+1. search - gets search term
+2. select - gets selected item
+
+Basic usage:
+
+```vue
+<script setup lang="ts">
+import SingleSelect from '@/shared/components/SingleSelect/SingleSelect.vue'
+import { ref } from 'vue'
+const items = [
+  { id: 1, name: 'John ' },
+  { id: 2, name: 'Doe' },
+  { id: 3, name: 'Jack' },
+  { id: 4, name: 'Maria' },
+  { id: 5, name: 'Sofia' },
+  { id: 6, name: 'Bebegim' },
+  { id: 7, name: 'Nazli' },
+  { id: 8, name: 'Elif' },
+  { id: 9, name: 'Polat' }
+]
+const item = ref<string | number>('')
+const handleSelect = (event: any) => {
+  console.log(event)
+}
+const handleSearch = (event: any) => {
+  console.log(event)
+}
+</script>
+<template>
+  <SingleSelect
+    id="select1"
+    name="select1"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    @select="handleSelect"
+    @search="handleSearch"
+    search
+    searchPlaceHolder="Search something"
+    mode="filter"
+  />
+  <SingleSelect
+    id="select1"
+    name="select1"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    @select="handleSelect"
+    @search="handleSearch"
+    search
+    searchPlaceHolder="Search something"
+  />
+  <SingleSelect
+    id="select1"
+    name="select1"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    @select="handleSelect"
+    @search="handleSearch"
+    search
+    searchPlaceHolder="Search something"
+    loading
+  />
+  <SingleSelect
+    id="select1"
+    name="select1"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    @select="handleSelect"
+  />
+  <SingleSelect
+    id="select2"
+    name="select2"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    :success="true"
+    @select="handleSelect"
+  />
+  <SingleSelect
+    id="select3"
+    name="select3"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    :error="true"
+    message="Error happened"
+    @select="handleSelect"
+  />
+  <SingleSelect
+    id="select4"
+    name="select4"
+    label="Select item"
+    :options="items"
+    :fieldNames="{ key: 'id', label: 'name' }"
+    v-model="item"
+    :disabled="true"
+    @select="handleSelect"
+  />
+</template>
+```

@@ -1,0 +1,32 @@
+describe('tests creating and updating company', () => {
+  it('create company: company tab', () => {
+    const stub = cy.stub()
+
+    cy.on('window:alert', stub)
+    cy.visit('/companies')
+    cy.get('[data-test="showModal"]').click()
+    cy.get('[data-test="cover-upload"]').selectFile('cypress/fixtures/company.jpg', { force: true })
+    cy.get('[data-test="company-name"]').click({ force: true })
+    cy.get('#companyName').type('Wisespace', { force: true })
+    cy.get('[data-test="head"]').click()
+    cy.get('#serviceType').click({ force: true })
+    cy.get('#select-serviceType-1').click({ force: true })
+    cy.get('#phone').type('941234567')
+    cy.get('#address').click({ force: true })
+    cy.get('[aria-visible="true"][data-test="map"]').then((el) => {
+      const center = { x: Number(el.innerHeight()) / 2, y: Number(el.innerWidth()) / 2 }
+      cy.get('[data-test="map"]').click(center.x, center.y)
+    })
+    cy.get('[data-test="save-location-btn"]').click()
+    cy.get('#paymentType').click({ force: true })
+    cy.get('#select-paymentType-1').click()
+    cy.get('#select-paymentType-2').click()
+    cy.get('[data-test="workdays-0"]').click()
+    cy.get('[data-test="workdays-1"]').click()
+    cy.get('[data-test="workdays-2"]').click()
+    cy.get('[data-test="workdays-3"]').click()
+    cy.get('[data-test="workdays-4"]').click()
+    cy.get('#status').click({ force: true })
+    cy.get('#select-status-1').click()
+  })
+})

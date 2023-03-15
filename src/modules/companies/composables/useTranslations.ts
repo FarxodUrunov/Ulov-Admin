@@ -1,0 +1,92 @@
+import { type I18nScope, useI18n } from 'vue-i18n'
+
+export const useTranslations = (props?: { scope?: I18nScope }) => {
+  const { scope = 'global' } = props || {}
+
+  return useI18n<UseI18nSchema, UseI18nLocale>({
+    useScope: scope,
+    messages: {
+      en: {
+        employees: 'Сотрудники',
+        addCompany: 'Добавить компанию',
+        addManager: 'Добавить менежера',
+        addEmployee: 'Добавить сотрудника',
+        head: 'Основной',
+        branch: 'Филиал',
+        companyLogo: 'Логотип вашей компании',
+        aboutCompany: 'О компании',
+        info: 'Инфо',
+        uploadCompanyPhotos: 'Загрузите фотографии вашей автосервиса',
+        photos: 'Фотографии',
+        service: 'Сервис',
+        managers: 'Менежеры',
+        servicedBrands: 'Обслуживаемые марки',
+        deleteAll: 'Удалить все',
+        editData: 'Изменить данные',
+        serviceBrands: 'Обслуживаемые марки',
+        showAll: 'Посмотреть все',
+        carServices: 'Автосервисы',
+        towTrucks: 'Эвакуаторы',
+        fuels: 'Авто заправки',
+        carWash: 'Авто мойки',
+        free: 'Бесплатная',
+        paid: 'Платный',
+        toChangeTheData: 'Изменить данные'
+      },
+      ru: {
+        employees: 'Сотрудники',
+        addCompany: 'Добавить компанию',
+        addManager: 'Добавить менежера',
+        addEmployee: 'Добавить сотрудника',
+        head: 'Основной',
+        branch: 'Филиал',
+        companyLogo: 'Логотип вашей компании',
+        aboutCompany: 'О компании',
+        info: 'Инфо',
+        uploadCompanyPhotos: 'Загрузите фотографии вашей автосервиса',
+        photos: 'Фотографии',
+        service: 'Сервис',
+        managers: 'Менежеры',
+        servicedBrands: 'Обслуживаемые марки',
+        deleteAll: 'Удалить все',
+        editData: 'Изменить данные',
+        serviceBrands: 'Обслуживаемые марки',
+        showAll: 'Посмотреть все',
+        carServices: 'Автосервисы',
+        towTrucks: 'Эвакуаторы',
+        fuels: 'Авто заправки',
+        carWash: 'Авто мойки',
+        free: 'Бесплатная',
+        paid: 'Платный',
+        toChangeTheData: 'Изменить данные'
+      },
+      uz: {
+        employees: 'Сотрудники',
+        addCompany: 'Добавить компанию',
+        addManager: 'Добавить менежера',
+        addEmployee: 'Добавить сотрудника',
+        head: 'Основной',
+        branch: 'Филиал',
+        companyLogo: 'Логотип вашей компании',
+        aboutCompany: 'О компании',
+        info: 'Инфо',
+        uploadCompanyPhotos: 'Загрузите фотографии вашей автосервиса',
+        photos: 'Фотографии',
+        service: 'Сервис',
+        managers: 'Менежеры',
+        servicedBrands: 'Обслуживаемые марки',
+        deleteAll: 'Удалить все',
+        editData: 'Изменить данные',
+        serviceBrands: 'Обслуживаемые марки',
+        showAll: 'Посмотреть все',
+        carServices: 'Автосервисы',
+        towTrucks: 'Эвакуаторы',
+        fuels: 'Авто заправки',
+        carWash: 'Авто мойки',
+        free: 'Бесплатная',
+        paid: 'Платный',
+        toChangeTheData: 'Изменить данные'
+      }
+    }
+  })
+}

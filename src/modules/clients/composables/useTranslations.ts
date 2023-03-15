@@ -1,0 +1,92 @@
+import { type I18nScope, useI18n } from 'vue-i18n'
+
+export const useTranslations = (props?: { scope?: I18nScope }) => {
+  const { scope = 'global' } = props || {}
+
+  return useI18n<UseI18nSchema, UseI18nLocale>({
+    useScope: scope,
+    messages: {
+      en: {
+        vehicle: 'Автомобиль',
+        additionalInformation: 'Дополнителная информация',
+        addVehicle: 'Добавить Автомобиль',
+        addPowerOfAttorney: 'Добавить доверенность',
+        addTechInspection: 'Добавить тех. осмотр',
+        addTinting: 'Добавить тонировка',
+        addGas: 'Добавить газ',
+        addInsurance: 'Добавить страхование',
+        vehiclePhoto: 'Фото автомобиля',
+        client: 'Телефон номер клиента',
+        viPhotos: 'Фото тех. паспорта',
+        uploadViPhotos: 'Загрузите фото лицевой и задняя сторона тех. паспорта',
+        vehicleOwner: 'Владелец авто',
+        serviceHistory: 'История сервиса',
+        brandAndModel: 'Марка и модель',
+        color: 'Цвет',
+        uploadModelPhoto: 'Загрузите лого марки авто',
+        payFine: 'Оплатить штраф',
+        validityPeriod: 'Период действия',
+        licenseSeriesAndNumber: 'Серия и номер права',
+        passportSeriesAndNumber: 'Серия и номер паспорта',
+        techPassportSeriesAndNumber: 'Серия и номер техпаспорта',
+        gasCheckDate: 'Дата проверки газа',
+        policyPrice: 'Цена полиса',
+        insuredAmount: 'Страховая сумма'
+      },
+      ru: {
+        vehicle: 'Автомобиль',
+        additionalInformation: 'Дополнителная информация',
+        addVehicle: 'Добавить Автомобиль',
+        addPowerOfAttorney: 'Добавить доверенность',
+        addTechInspection: 'Добавить тех. осмотр',
+        addTinting: 'Добавить тонировка',
+        addGas: 'Добавить газ',
+        addInsurance: 'Добавить страхование',
+        vehiclePhoto: 'Фото автомобиля',
+        client: 'Телефон номер клиента',
+        viPhotos: 'Фото тех. паспорта',
+        uploadViPhotos: 'Загрузите фото лицевой и задняя сторона тех. паспорта',
+        vehicleOwner: 'Владелец авто',
+        serviceHistory: 'История сервиса',
+        brandAndModel: 'Марка и модель',
+        color: 'Цвет',
+        uploadModelPhoto: 'Загрузите лого марки авто',
+        payFine: 'Оплатить штраф',
+        validityPeriod: 'Период действия',
+        licenseSeriesAndNumber: 'Серия и номер права',
+        passportSeriesAndNumber: 'Серия и номер паспорта',
+        techPassportSeriesAndNumber: 'Серия и номер техпаспорта',
+        gasCheckDate: 'Дата проверки газа',
+        policyPrice: 'Цена полиса',
+        insuredAmount: 'Страховая сумма'
+      },
+      uz: {
+        vehicle: 'Автомобиль',
+        additionalInformation: 'Дополнителная информация',
+        addVehicle: 'Добавить Автомобиль',
+        addPowerOfAttorney: 'Добавить доверенность',
+        addTechInspection: 'Добавить тех. осмотр',
+        addTinting: 'Добавить тонировка',
+        addGas: 'Добавить газ',
+        addInsurance: 'Добавить страхование',
+        vehiclePhoto: 'Фото автомобиля',
+        client: 'Телефон номер клиента',
+        viPhotos: 'Фото тех. паспорта',
+        uploadViPhotos: 'Загрузите фото лицевой и задняя сторона тех. паспорта',
+        vehicleOwner: 'Владелец авто',
+        serviceHistory: 'История сервиса',
+        brandAndModel: 'Марка и модель',
+        color: 'Цвет',
+        uploadModelPhoto: 'Загрузите лого марки авто',
+        payFine: 'Оплатить штраф',
+        validityPeriod: 'Период действия',
+        licenseSeriesAndNumber: 'Серия и номер права',
+        passportSeriesAndNumber: 'Серия и номер паспорта',
+        techPassportSeriesAndNumber: 'Серия и номер техпаспорта',
+        gasCheckDate: 'Дата проверки газа',
+        policyPrice: 'Цена полиса',
+        insuredAmount: 'Страховая сумма'
+      }
+    }
+  })
+}
